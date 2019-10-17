@@ -10,13 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_16_005537) do
+ActiveRecord::Schema.define(version: 2019_10_17_024719) do
 
   create_table "routines", force: :cascade do |t|
     t.integer "user_id"
     t.integer "workout_id"
-    t.integer "total_time"
-    t.integer "total_calories"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_10_16_005537) do
     t.integer "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
   end
 
 end
