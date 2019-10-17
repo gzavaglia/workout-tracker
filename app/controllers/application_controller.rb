@@ -12,4 +12,16 @@ class ApplicationController < ActionController::Base
         redirect_to root_url
       end
     end
+
+    def logged_in?
+        !!session[:id]
+    end
+    
+    def authenticate 
+        if !logged_in?
+          redirect '/login'
+        end
+    end
+
+    
 end

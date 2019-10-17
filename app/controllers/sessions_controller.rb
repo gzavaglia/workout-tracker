@@ -1,18 +1,18 @@
 class SessionsController < ApplicationController
     def new
-        @user = User.new
-      end
+        
+    end
     
-      def create
-        @user = User.find(:email => params[:user][:email])
-        if @user && @user.authenticate(params[:user][:password])
-          session[:user_id] = @user.id
-          redirect_to user_path(@user)
+    def create
+        user = User.find_by(email: params[:session][:email].downcase)
+        if user && user.authenticate(params[:session][:password])
+            session[:user_id] = user.id
+            redirect_to user_path(user)
         else
-          flash[:notice] = "Login is incorrect"
-          redirect_to :login
+            flash[:danger] = "Wrong email and/or password"
+            render :new
         end
-      end
+    end
 
     def destroy
         if current_user

@@ -1,1 +1,8 @@
-<h2> hello </h2>
+<h2> Hello <%=@user.name%> </h2>
+<h3> Your info: <br/> </h3>
+Age: <%=@user.age%> <br/>
+Weight: <%=@user.weight%> lbs <br/>
+Height: <%=@user.height%> <br/>
+<br/>
+
+<%= link_to "Edit Your Info", edit_user_path, class:"navbar-brand" %>

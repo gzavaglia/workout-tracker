@@ -1,8 +1,6 @@
-<h1>Log In</h1>
-<%= form_tag("/login", method: "post") do %>
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  Email: <input name="email" id="email">
-  <br />
-  <p>Password: <%= password_field_tag :password %></p>
-  <%= submit_tag "Log In" %>
+<h1> Log In </h1>
+<%= form_for(:session, url: login_path) do |f| %>
+    <strong><%= f.label :email %></strong> <%= f.text_field :email, class:"form-control"  %><br>
+    <strong><%= f.label :password %></strong> <%= f.password_field :password, class:"form-control"  %><br>
+    <%= f.submit "Login", class: "btn btn-primary" %>
 <% end %>
