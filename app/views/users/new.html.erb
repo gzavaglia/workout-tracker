@@ -1,2 +1,15 @@
 <h1>Sign Up!</h1>
+<p><%= button_to "Sign Up with Google", '/auth/google', class: "btn btn-outline-primary" %></p>
+<p>or enter in your details below:</p>
+
+<% if @user.errors.any? %>
+<div class="alert alert-danger" role="alert">
+  <ul>
+  <% @user.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+</div>
+<% end %>
+
 <%= render partial: 'form', locals: {user: @user} %>

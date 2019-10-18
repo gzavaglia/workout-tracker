@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   resources :users
 
   get '/login', to: 'sessions#new'
+  get '/auth/google/callback', to: 'users#google_login'
   post '/login', to: 'sessions#create'
   delete '/session', to: 'sessions#destroy'
-  post '/projects', to: 'projects#create'
-
+  get '/auth/google/callback', to: 'users#google_login'
 end
