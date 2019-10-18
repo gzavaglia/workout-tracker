@@ -1,0 +1,9 @@
+<%= form_for @workout do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br />
+    <%= f.label :calories_burned %>
+    <%= f.number_field :calories_burned %><br />
+    <%= f.label :time %>
+    <%= f.number_field :time, :value => 60 %> min<br />
+    <%= f.submit %> 
+<% end %>
