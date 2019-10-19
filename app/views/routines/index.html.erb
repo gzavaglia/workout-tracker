@@ -5,6 +5,7 @@
     <ul>
     <% @routines.each do |routine| %>
         <li><%= link_to "#{routine.title}" %></li>
+        <%= routine.workouts %>
     <% end %>
     </ul>
 <% end %>

@@ -70,3 +70,7 @@ gem "omniauth", "~> 1.9"
 gem "omniauth-google-oauth2", "~> 0.8.0"
 
 gem "omniauth-facebook", "~> 5.0"
+
+gem "dotenv-rails", "~> 2.7"
+
+gem "thin", "~> 1.7"
