@@ -5,8 +5,18 @@
     <ul>
     <% @routines.each do |routine| %>
         <li><%= link_to "#{routine.title}" %></li>
-        <%= routine.workouts %>
     <% end %>
+    </ul>
+<% end %>
+
+<h2>Your Workouts:</h2>
+<% if current_user.workouts.empty? %>
+    <p> You have no workouts yet! </p>
+<% else %>
+    <ul>
+    <% current_user.workouts.each do |workout| %>
+        <li><%= link_to workout.name, workout_path(workout) %></li>
+   <% end %>
     </ul>
 <% end %>
 
