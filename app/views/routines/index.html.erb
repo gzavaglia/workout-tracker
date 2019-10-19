@@ -2,9 +2,14 @@
 <% if @routines.empty? %>
     <p> You have no routines yet! </p>
 <% else %>
-    <% @routines.each do |r| %>
-        <%= link_to "#{r.title}" %>
+    <ul>
+    <% @routines.each do |routine| %>
+        <li><%= link_to "#{routine.title}" %></li>
     <% end %>
+    </ul>
 <% end %>
 
 <%= link_to "Add New Routine", new_user_routine_path(@user), class:"navbar-brand" %>
+<%= link_to "See All Available Workouts", workouts_path %>
+Or
+<%= link_to "Add it", new_workout_path %>

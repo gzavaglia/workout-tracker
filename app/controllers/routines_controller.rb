@@ -25,6 +25,11 @@ class RoutinesController < ApplicationController
         end
     end
 
+    def show
+        @routine = Routine.find(id: params[:id])
+    end
+
+
       private
 
   def routine_params
