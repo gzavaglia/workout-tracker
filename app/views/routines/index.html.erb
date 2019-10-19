@@ -9,7 +9,7 @@
     </ul>
 <% end %>
 
-<%= link_to "Add New Routine", new_user_routine_path(@user), class:"navbar-brand" %>
-<%= link_to "See All Available Workouts", workouts_path %>
+<%= link_to "Start New Routine", new_user_routine_path(current_user), class:"navbar-brand" %> <br/>
+<%= link_to "See All Available Workouts", workouts_path %> <br/>
 Or
-<%= link_to "Add it", new_workout_path %>
+<%= link_to "Add it", new_workout_path %> <br/>

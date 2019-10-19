@@ -1,10 +1,13 @@
 <%= form_for [user, routine] do |f| %>
-    <%= f.label :title %>
+    <%= f.label :title %><br/>
     <%= f.text_field :title, value: "Routine XX" %><br />
-    <%= f.label :date %>
+    <%= f.label :date %><br />
     <%= f.date_select :date %><br />
-    <%= f.label :workout %>
-    <%= f.collection_select :workout_id, Workout.all, :id, :name %>
+    <%= f.label :workout %><br />
+    <% 10.times do %>
+        <%= f.collection_select :workout_id, Workout.all, :id, :name, :prompt => true%><br/>
+    <% end %>
+        <br/>
     <%= f.submit %>
    
 <% end %>

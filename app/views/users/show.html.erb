@@ -1,9 +1,10 @@
 <h2> Hello <%=@user.name%> </h2>
 <h3> Your info: <br/> </h3>
 Age: <%=@user.age%> <br/>
-Weight: <%=@user.weight%> lbs <br/>
-Height: <%=@user.height%> <br/>
+Weight: <%=@user.weight %> lbs <br/>
+Height: <%=@user.height %> <br/>
 <br/>
 
 <%= link_to "Edit Your Info", edit_user_path, class:"navbar-brand" %>
 <%= link_to "See Your Routines", user_routines_path(@user), class:"navbar-brand" %>
+<%= link_to "See Available Workouts", workouts_path, class:"navbar-brand" %>
