@@ -26,7 +26,8 @@ class RoutinesController < ApplicationController
     end
 
     def show
-        @routine = Routine.find(id: params[:id])
+        @user = User.find(params[:id])
+        @routine = @user.routines.find(params[:id])
     end
 
 
