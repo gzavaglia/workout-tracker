@@ -1,0 +1,10 @@
+<h2>Your Routines:</h2>
+<% if @routines.empty? %>
+    <p> You have no routines yet! </p>
+<% else %>
+    <% @routines.each do |r| %>
+        <%= link_to "#{r.title}" %>
+    <% end %>
+<% end %>
+
+<%= link_to "Add New Routine", new_user_routine_path(@user), class:"navbar-brand" %>

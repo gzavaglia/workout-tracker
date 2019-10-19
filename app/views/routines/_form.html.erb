@@ -3,6 +3,8 @@
     <%= f.text_field :title, value: "Routine XX" %><br />
     <%= f.label :date %>
     <%= f.date_select :date %><br />
-
-    ################MISSING SUBMIT BUTTON!!
+    <%= f.label :workout %>
+    <%= f.collection_select :workout_id, Workout.all, :id, :name %>
+    <%= f.submit %>
+   
 <% end %>
