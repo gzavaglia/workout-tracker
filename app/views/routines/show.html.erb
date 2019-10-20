@@ -4,6 +4,10 @@
 <%= @works.name %><br/>
 <%= @works.calories_burned %> cal/hr
 <br/>
+<%= link_to "Edit this Routine", edit_user_routine_path(current_user, @routine) %> <br/>
+<%= form_tag(user_routine_path(current_user, @routine), method: "delete") do %>
+    <%= submit_tag("Delete Routine", class: "btn btn-danger btn-block") %>
+<% end %>
 <%= link_to "Back", user_routines_path %> <br/>
 
 

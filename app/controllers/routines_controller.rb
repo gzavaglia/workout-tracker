@@ -21,6 +21,7 @@ class RoutinesController < ApplicationController
         if @routine.save
             redirect_to user_routines_path(@user)
         else
+        flash[:danger] = "This Routine Could not be Created :("
           render :new
         end
     end
@@ -37,19 +38,35 @@ class RoutinesController < ApplicationController
     end
 
     def edit
+        @routine = current_user.routines.find(params[:id])
+        @user = User.find(params[:user_id])
+
     end
   
     def update
-      @watchlist.update(watchlist_params)
-      if @watchlist.save
-        redirect_to watchlist_path(@watchlist)
-        flash[:message] = "#{@watchlist.name} updated!"
+        @user = User.find(params[:user_id])
+        @routine = Routine.find(params[:id])
+        @routine.update(routine_params)
+ 
+      if @routine.save
+        redirect_to user_routine_path(current_user, @routine)
+        flash[:message] = "#{@routine.title} updated!"
       else
         render :edit
       end
     end
   
-    
+    def destroy
+        @routine = current_user.routines.find(params[:id])
+        if @routine
+          @routine.destroy
+          redirect_to user_routines_path(current_user)
+          flash[:message] = "Your routine has been deleted"
+        else
+          render :show
+          flash[:danger] = "This routine could not be deleted"
+        end
+    end
 
       private
 
