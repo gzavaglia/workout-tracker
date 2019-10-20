@@ -33,3 +33,9 @@
 ## MOAAAR STEPS
 - create methods for total minutes and total calories?
 - add query to sort workouts by muscle group/alphabetically idk
+
+## next:
+- be able to delete
+- show errors
+- edit routines and workouts
+- query

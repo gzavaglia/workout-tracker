@@ -1,4 +1,9 @@
-<h1>helloooo </h1>
-<h1><%= @routine.title %> <h1>
-<%= @routine.date %>
+<h2><%= @routine.title %> </h2>
+<p> Date Created: <%= @routine.date %> </p>
+<h3>Workout:</h3>
+<%= @works.name %><br/>
+<%= @works.calories_burned %> cal/hr
+<br/>
+<%= link_to "Back", user_routines_path %> <br/>
+
 

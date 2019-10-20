@@ -4,7 +4,7 @@
 <% else %>
     <ul>
     <% @routines.each do |routine| %>
-        <li><%= routine.title, user_routine_path(@user, routine) %></li>
+        <li><%= link_to routine.title, user_routine_path(current_user, routine) %></li>
     <% end %>
     </ul>
 <% end %>

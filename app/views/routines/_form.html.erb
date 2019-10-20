@@ -4,10 +4,8 @@
     <%= f.label :date %><br />
     <%= f.date_select :date %><br />
     <%= f.label :workout %><br />
-    <% 10.times do %>
-        <%= f.collection_select :workout_id, Workout.all, :id, :name, :prompt => true%><br/>
-    <% end %>
-        <br/>
+    <%= f.collection_select :workout_id, Workout.all, :id, :name, :prompt => true%><br/>
+    <br/>
     <%= f.submit %>
    
 <% end %>
