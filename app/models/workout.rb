@@ -2,6 +2,7 @@ class Workout < ApplicationRecord
     has_many :routines
     has_many :users, through: :routines
 
-    validates :name, presence: true, uniqueness: true
+    #validations
     validates :muscle_group, presence: true
+    validates :name, presence: true, uniqueness: true
 end

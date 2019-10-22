@@ -12,17 +12,18 @@ class WorkoutsController < ApplicationController
      end
  
      def create
-         workout = Workout.create(workout_params)
-         if workout.save
-             redirect_to workout_path(workout)
+         @workout = Workout.create(workout_params)
+         if @workout.save
+             redirect_to workout_path(@workout)
          else
+            flash[:danger] = "This workout could not be added"
              render :new
          end
      end
 
     private
     def workout_params
-        params.require(:workout).permit(:name, :time, :calories_burned)
+        params.require(:workout).permit(:name, :time, :calories_burned, :muscle_group)
     end
 
 

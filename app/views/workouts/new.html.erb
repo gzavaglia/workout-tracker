@@ -4,6 +4,8 @@
     <%= f.label :calories_burned %>
     <%= f.number_field :calories_burned %><br />
     <%= f.label :time %>
-    <%= f.number_field :time, :value => 60 %> min<br />
+    <%= f.number_field :time, :value => 60 %> min/reps<br />
+    <%= f.label :muscle_group %>
+    <%= f.text_field :muscle_group %><br />
     <%= f.submit %> 
 <% end %>

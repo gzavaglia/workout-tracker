@@ -1,8 +1,10 @@
 <%= form_for [user, routine] do |f| %>
     <%= f.label :title %><br/>
-    <%= f.text_field :title, value: "Routine XX" %><br />
+    <%= f.text_field :title, placeholder: 'Enter A Nickname Workout' %><br />
     <%= f.label :date %><br />
     <%= f.date_select :date %><br />
+    <%= f.label :reps %>
+    <%= f.number_field :reps %><br />
     <%= f.label :workout %><br />
     <%= f.collection_select :workout_id, Workout.all, :id, :name, :prompt => true%><br/>
     <br/>

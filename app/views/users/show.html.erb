@@ -4,7 +4,7 @@ Age: <%=@user.age%> <br/>
 Weight: <%=@user.weight %> lbs <br/>
 Height: <%=@user.height %> <br/>
 <br/>
-
-<%= link_to "Edit Your Info", edit_user_path, class:"navbar-brand" %>
-<%= link_to "See Your Routines", user_routines_path(@user), class:"navbar-brand" %>
+<%= link_to "Add a new Workout", new_user_routine_path(current_user), class:"navbar-brand" %> <br/>
+<%= link_to "Edit Your Info", edit_user_path, class:"navbar-brand" %> <br/>
+<%= link_to "See Your Workouts", user_routines_path(@user), class:"navbar-brand" %> <br/>
 <%= link_to "See Available Workouts", workouts_path, class:"navbar-brand" %>

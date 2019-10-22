@@ -8,5 +8,14 @@ class Routine < ApplicationRecord
     def workout_name
         self.workout.name if self.workout
     end
+
+    def workout_cals=(workout)
+        self.workout = Workout.find_or_create_by(name: workout)
+    end
+    
+    def workout_cals
+        self.workout.calories_burned if self.workout
+    end
+    
     
 end

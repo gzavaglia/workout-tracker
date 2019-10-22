@@ -71,7 +71,7 @@ class RoutinesController < ApplicationController
       private
 
   def routine_params
-    params.require(:routine).permit(:title, :date, :workout_id, :workout_name)
+    params.require(:routine).permit(:title, :date, :workout_id, :workout_name, :reps, :workout_cals)
   end
 
   
