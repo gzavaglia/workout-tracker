@@ -1,4 +1,5 @@
 class WorkoutsController < ApplicationController
+    before_action :require_login
     def index
         @workouts = Workout.all
     end
@@ -20,6 +21,12 @@ class WorkoutsController < ApplicationController
              render :new
          end
      end
+
+     def search
+        @workouts = Workout.search(params[:query])
+        render :index
+     end
+
 
     private
     def workout_params

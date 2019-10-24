@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/session', to: 'sessions#destroy'
   get '/auth/facebook/callback' => 'sessions#fb_create'
+  get '/search' => 'workouts#search', :as => 'search_workout'
+
 end

@@ -1,4 +1,6 @@
 class RoutinesController < ApplicationController
+  before_action :require_login
+
     def index
         if params[:user_id]
             @user = User.find(params[:user_id])

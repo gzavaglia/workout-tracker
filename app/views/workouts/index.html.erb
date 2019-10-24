@@ -1,4 +1,12 @@
-<h1> Workouts: </h1>
+<%= form_tag(search_workout_path, :method => "get", class: 'navbar-form navbar-left') do %>  
+  <%= form_tag("/search", method: "get") do %>
+    <%= label_tag :query, "Search by Muscle Group:" %>
+    <%= text_field_tag :query, "", class:"form-control" %>
+    <%= submit_tag "Search", class: "btn btn-sm btn-secondary" %>
+  <% end %> 
+</div>  
+
+<% end %><h1> Workouts: </h1>
 <ul>
 <% @workouts.each do |workout| %>
   <li><h3> <%= link_to workout.name, workout_path(workout) %> </h3> </li>
