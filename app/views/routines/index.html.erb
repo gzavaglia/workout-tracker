@@ -8,8 +8,10 @@
     <% end %>
     </ul>
 <% end %>
-
-<%= link_to "Start New Routine", new_user_routine_path(current_user), class:"navbar-brand" %> <br/>
-<%= link_to "See All Available Workouts", workouts_path %> <br/>
-Or
-<%= link_to "Add it", new_workout_path %> <br/>
+<div class="menu_simple">
+<ul>
+<li> <%= link_to "Start New Routine", new_user_routine_path(current_user), class:"navbar-brand" %> </li>
+<li> <%= link_to "See All Available Workouts", workouts_path %> </li>
+<li> <%= link_to "Add New Workout", new_workout_path %> </li>
+</ul>
+</div>

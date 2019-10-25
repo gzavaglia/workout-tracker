@@ -18,7 +18,7 @@ class WorkoutsController < ApplicationController
              redirect_to workout_path(@workout)
          else
             flash[:danger] = "This workout could not be added"
-             render :new
+            render :new
          end
      end
 
