@@ -40,6 +40,7 @@ html{
     margin-bottom: 30px;
   }
 
+ 
 
 .menu_simple ul {
     margin: 0;
@@ -74,5 +75,5 @@ html{
         }
 
     li {
-        text-decoration: none;
+        list-style-type: none;
     }
