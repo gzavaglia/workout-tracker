@@ -14,5 +14,9 @@
 <% end %>
 </ul>
 
-<h4> Don't see your work out? </h4>
-<strong> <%= link_to "Add it", new_workout_path %> </strong> 
+<div class="navbar">
+<%= link_to "Add a Workout to Your List", new_user_routine_path(current_user) %> 
+<%= link_to "See Your Workouts", user_routines_path(current_user) %> 
+<%= link_to "Add New Workout to the List", new_workout_path %> 
+
+</div>

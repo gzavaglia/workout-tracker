@@ -5,12 +5,9 @@ Weight: <%=@user.weight %> lbs <br/>
 Height: <%=@user.height %> <br/>
 <br/>
 
-<div class="menu_simple">
-<ul>
-    <li> <%= link_to "Add a new Workout", new_user_routine_path(current_user) %> </li>
-    <li> <%= link_to "Edit Your Info", edit_user_path %> </li>
-    <li> <%= link_to "See Your Workouts", user_routines_path(@user) %> </li>
-    <li> <%= link_to "See Available Workouts", workouts_path %> </li>
-
-</ul>
+<div class="navbar">
+     <%= link_to "Add a new Workout", new_user_routine_path(current_user) %> 
+     <%= link_to "Edit Your Info", edit_user_path %> 
+     <%= link_to "See Your Workouts", user_routines_path(@user) %> 
+     <%= link_to "See Available Workouts", workouts_path %> 
 </div>
