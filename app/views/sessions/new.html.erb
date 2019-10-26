@@ -1,4 +1,6 @@
 <h1> Log In </h1>
+<h2><%= link_to('Log in with Facebook!', '/auth/facebook') %> </h2>
+<h3> or enter your login info below: </h3>
 <%= form_for(:session, url: login_path) do |f| %>
     <strong><%= f.label :email %></strong> <%= f.text_field :email, class:"form-control"  %><br>
     <strong><%= f.label :password %></strong> <%= f.password_field :password, class:"form-control"  %><br>

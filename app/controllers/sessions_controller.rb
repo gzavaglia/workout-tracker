@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
     end
 
     def fb_create
-        @user = User.find_or_create_by(id: auth['id']) do |u|
+        @user = User.find_or_create_by(email: auth[:info][:email]) do |u|
             u.name = auth['info']['name']
             u.email = auth['info']['email']
             u.password = SecureRandom.urlsafe_base64
