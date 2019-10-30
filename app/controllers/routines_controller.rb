@@ -21,10 +21,11 @@ class RoutinesController < ApplicationController
         @routine = @user.routines.new(routine_params)
         @routine.user = User.find_by(id: params[:user_id])
         if @routine.save
+            flash[:success] = "Workout was successfully added to your list"
             redirect_to user_routines_path(@user)
         else
-        flash[:danger] = "This Routine Could not be Created :("
-          render :new
+          flash[:danger] = "This Routine Could not be Created :("
+          render :new 
         end
     end
 
@@ -51,9 +52,10 @@ class RoutinesController < ApplicationController
         @routine.update(routine_params)
  
       if @routine.save
+        flash[:success] = "#{@routine.title} updated!"
         redirect_to user_routine_path(current_user, @routine)
-        flash[:message] = "#{@routine.title} updated!"
       else
+        flash[:danger] = "#{@routine.title} wasn't able to be updated. Please try again!"
         render :edit
       end
     end
@@ -62,11 +64,11 @@ class RoutinesController < ApplicationController
         @routine = current_user.routines.find(params[:id])
         if @routine
           @routine.destroy
+          flash[:success] = "Your routine has been deleted"
           redirect_to user_routines_path(current_user)
-          flash[:message] = "Your routine has been deleted"
         else
-          render :show
           flash[:danger] = "This routine could not be deleted"
+          redirect_to user_routine_path(current_user, @routine)
         end
     end
 
