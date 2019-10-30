@@ -15,10 +15,11 @@ class WorkoutsController < ApplicationController
      def create
          @workout = Workout.create(workout_params)
          if @workout.save
-             redirect_to workout_path(@workout)
+            flash[:success] = "New workout was created!"
+            redirect_to workout_path(@workout)
          else
             flash[:danger] = "This workout could not be added"
-            render :new
+            redirect_to new_workout_path
          end
      end
 

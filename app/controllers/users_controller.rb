@@ -5,12 +5,13 @@ class UsersController < ApplicationController
     end
 
     def create
-        user = User.create(user_params)
-        if user.save
+        @user = User.create(user_params)
+        if @user.save
             session[:user_id] = user.id
             redirect_to user_path(user)
         else
-            render :new
+          flash[:dange] = "Something went wrong, please try again. Make sure you enter your name, email and password"  
+          redirect_to new_user_path
         end
     end
 
@@ -26,10 +27,11 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
         @user.update(user_params)
         if @user.save
-          flash[:message] = "Your information has been updated"
+          flash[:success] = "Your information has been updated"
           redirect_to user_path(@user)
         else
-          render :edit
+          flash[:danger] = "Your info couldn't get updated"
+          redirect_to user_edit_path 
         end
       end
 

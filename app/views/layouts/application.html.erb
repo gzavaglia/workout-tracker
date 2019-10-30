@@ -11,6 +11,11 @@
   </head>
 
   <body>
+  <div>
+    <% flash.each do |k,v| %>
+      <div class="<%= k %>"><p><%= v %></p></div>
+    <% end %>
+  </div>
   <% if !current_user %>
           <a class="navbar-brand" href="<%= new_user_path %>"/>Sign Up</a>
           <%= link_to "Log in", login_path, class:"navbar-brand" %>
