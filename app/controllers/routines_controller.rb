@@ -41,8 +41,9 @@ class RoutinesController < ApplicationController
     end
 
     def edit
-        @routine = current_user.routines.find(params[:id])
-        @user = User.find(params[:user_id])
+      @routine = current_user.routines.find(params[:id])
+      authorize_resource(@routine)  
+      @user = User.find(params[:user_id])
 
     end
   
